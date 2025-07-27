@@ -1,0 +1,39 @@
+{
+  "name": "R Development Environment",
+  "image": "ghcr.io/rocker-org/devcontainer/r-ver:4",
+  
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+
+  // Configure tool-specific properties.
+  "customizations": {
+    // Configure properties specific to VS Code.
+    "vscode": {
+      // Add the IDs of extensions you want installed when the container is created.
+      "extensions": [
+        "REditorSupport.r",
+        "quarto-dev.quarto",
+        "ms-vscode.vscode-json",
+        "MS-vsliveshare.vsliveshare"
+      ],
+      
+      // Set *default* container specific settings.json values on container create.
+      "settings": {
+        "r.rterm.linux": "/usr/local/bin/R",
+        "r.rpath.linux": "/usr/local/bin/R"
+      }
+    }
+  },
+
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
+
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "R --version && Rscript -e 'install.packages(c(\"languageserver\", \"rmarkdown\", \"knitr\", \"tidyverse\"), repos=\"https://cran.rstudio.com/\")'",
+
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
+}
