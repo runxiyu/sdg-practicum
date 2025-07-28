@@ -1,6 +1,6 @@
 ---
 title: "How does a pendulum's length affect its time period?"
-author: "Heather Wang, Qihan Liu, Runxi Yu, Vincent Bae"
+author: "Heather Wang, Qihan Liu, Runxi Yu, Jihoo(Vincent) Bae"
 output: html_document
 ---
 
