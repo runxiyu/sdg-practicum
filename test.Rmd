@@ -6,17 +6,62 @@ output: html_document
 
 ## Introduction
 
+In this experiment, we investigate whether changing the length of a pendulum's
+string causes changes in its period (the time it takes to complete one full
+swing back and forth).
+
 ![Simple gravity pendulum](Simple_gravity_pendulum.svg)
 
-A pendulum
+Theory suggests that for sufficiently small amounts angles, the pendulum
+follows $T = 2\pi\sqrt{\frac{L}{g}}$ where $T$ is the period, $L$ is the
+length, and $g$ is the acceleration due to gravity. Therefore, the theory
+suggests that changes in the string's length do affect the time period.
 
-## Experiment design
+Therefore, our hypotheses shall be:
+* **Null hypothesis:** Changes in the string's length do not affect the time
+  period.
+* **Alternate hypothesis:** Changes in the string's length do affect the time
+  period.
 
-## Hypotheses
+## Treatment
 
-Null hypothesis: Changes in the string's length do not affect the time period.
+The treatment in this experiment is the pendulum length, for which we suggested
+$10\,\mathrm{cm}$, $15\,\mathrm{cm}$, $20\,\mathrm{cm}$, and $25\,\mathrm{cm}$.
 
-Alternate hypothesis: Changes in the string's length do affect the time period.
+Random assignment is not applicable in this context because the experiment is
+designed as a deterministic system in a controlled environment; all extraneous
+variables, such as the mass of the bulb, the gravitational field strength of
+the earth, were held constant as far as possible. Each length was tested in
+four trials to reduce measurement errors.
+
+There are some limitations on generalizability. First, although the theoretical
+formula assumes small-angle oscillations, the initial release angles in this
+experiment were relatively large. This introduces minor discrepancies due to
+nonlinear effects at larger angles. Additionally, the results may only
+generalize to pendulums with similar construction materials and in similar air
+conditions (e.g., negligible air resistance).
+
+## Subjects
+
+The subjects are the pendulums constructed by tying two 1 CNY coins to a length
+of string. The same type and number of coins were used throughout the
+experiment. A piece of string was suspended from a fixed support, and the coins
+were attached to the end of the string to act as the pendulum bob. The pendulum
+was released from a fixed angle, and the time it took to complete one period
+was recorded using a stopwatch.
+
+2 coins were chosen as they are readily available, of a fixed mass, and provide
+enough mass for the pendulum to swing. The subjects are ideal for the study
+since the pendulum system is a physical object rather than a social or
+biological population. They directly represent the physical system being
+investigated and allow for controlled manipulation of the treatment variable
+while ensuring other factors are constant. There might be limitations in
+generalizing the results to all pendulums. The findings will directly apply to
+pendulums made with similar materials and in similar settings, but may not be
+generalizable to pendulums with different bobs, materials, or conditions. That
+said, while the exact timings and results from this experiment is not
+applicable to all pendulums, the trend and relationship between pendulum length
+and period are generalizable. 
 
 ## Analysis
 
@@ -67,22 +112,47 @@ There are insufficient sample points for the diagnostic plots to be accurate,
 but they seem to be acceptable for this sample size. It is however somewhat
 unclear what causes the enlarged residues for large theoretical quantities.
 
-
-Given that a linear regression is mostly appropriate as suggested by the
-diagnostic tests, its $p$-value $4.52 \times 10^{-12}$ suggests that it is
-extremely unlikely to obtain our result (or more extreme results) given that
-the null hypothesis is true, therefore suggesting with high confidence that the 
-null hypothesis is false and that the alternate hypothesis is true.
-Therefore: changes in the string's length do affect the time period.
+Given that a linear regression is an appropriate estimate as suggested by the
+diagnostic tests (even though the relationship is theoretically supposed to be
+that of a square root), its $p$-value $4.52 \times 10^{-12}$ suggests that it
+is extremely unlikely to obtain our result (or more extreme results) given that
+the null hypothesis is true, therefore suggesting with high confidence that the
+null hypothesis is false and that the alternate hypothesis is true. Therefore:
+changes in the string's length do affect the time period.
 
 ## T-tests
 
+Another way to confirm the statistical significance of the difference in means
+is via Welch's $t$-test, not assuming equal variances.
 
-<!--
 ```{r}
-pairwise.t.test(data$time_10_periods, data$length_cm, p.adjust.method = "bonferroni")
+group_10 <- data$time_10_periods[data$length_cm == 10]
+group_15 <- data$time_10_periods[data$length_cm == 15]
+group_20 <- data$time_10_periods[data$length_cm == 20]
+group_25 <- data$time_10_periods[data$length_cm == 25]
 ```
--->
+
+```{r}
+print(t.test(group_10, group_15, var.equal = FALSE))
+print(t.test(group_15, group_20, var.equal = FALSE))
+print(t.test(group_20, group_25, var.equal = FALSE))
+```
+
+Again, the $p$-values are extremely small, suggesting that it is extremely
+unlikely to obtain our result (or more extreme results) given that the null
+hypothesis is true, therefore suggesting with high confidence that the null
+hypothesis is false and that the alternate hypothesis is true. Therefore:
+changes in the string's length do affect the time period.
+
+## Estimated effects
+
+Are effects estimated correctly? Are they described correctly? Is their substantive significance discussed, ideally with a relevant benchmark?
+
+## Statistical Significance
+
+Are p-values presented and discussed correctly? A full score would discuss why the p-value is obtained, i.e. what about the study led to the p-values estimated.
+
+*I think this is done*
 
 ## Informal bibliography
 

@@ -358,6 +358,9 @@ time period?</h1>
 
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
+<p>In this experiment, we investigate whether changing the length of a
+pendulum’s string causes changes in its period (the time it takes to
+complete one full swing back and forth).</p>
 <div class="float">
 <svg id="svg2" alt="Simple gravity pendulum" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://web.resource.org/cc/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="744.09448" height="700" sodipodi:version="0.32" inkscape:version="0.45" sodipodi:docname="Simple_gravity_pendulum2.svg" inkscape:output_extension="org.inkscape.output.svg.inkscape" sodipodi:docbase="C:\Documents and Settings\Administator\Desktop" sodipodi:modified="true">
   <defs id="svg2_defs4">
@@ -414,17 +417,55 @@ time period?</h1>
 </svg>
 <div class="figcaption">Simple gravity pendulum</div>
 </div>
-<p>A pendulum</p>
+<p>Theory suggests that for sufficiently small amounts angles, the
+pendulum follows <span class="math inline">\(T =
+2\pi\sqrt{\frac{L}{g}}\)</span> where <span class="math inline">\(T\)</span> is the period, <span class="math inline">\(L\)</span> is the length, and <span class="math inline">\(g\)</span> is the acceleration due to gravity.
+Therefore, the theory suggests that changes in the string’s length do
+affect the time period.</p>
+<p>Therefore, our hypotheses shall be: * <strong>Null
+hypothesis:</strong> Changes in the string’s length do not affect the
+time period. * <strong>Alternate hypothesis:</strong> Changes in the
+string’s length do affect the time period.</p>
 </div>
-<div id="experiment-design" class="section level2">
-<h2>Experiment design</h2>
+<div id="treatment" class="section level2">
+<h2>Treatment</h2>
+<p>The treatment in this experiment is the pendulum length, for which we
+suggested <span class="math inline">\(10\,\mathrm{cm}\)</span>, <span class="math inline">\(15\,\mathrm{cm}\)</span>, <span class="math inline">\(20\,\mathrm{cm}\)</span>, and <span class="math inline">\(25\,\mathrm{cm}\)</span>.</p>
+<p>Random assignment is not applicable in this context because the
+experiment is designed as a deterministic system in a controlled
+environment; all extraneous variables, such as the mass of the bulb, the
+gravitational field strength of the earth, were held constant as far as
+possible. Each length was tested in four trials to reduce measurement
+errors.</p>
+<p>There are some limitations on generalizability. First, although the
+theoretical formula assumes small-angle oscillations, the initial
+release angles in this experiment were relatively large. This introduces
+minor discrepancies due to nonlinear effects at larger angles.
+Additionally, the results may only generalize to pendulums with similar
+construction materials and in similar air conditions (e.g., negligible
+air resistance).</p>
 </div>
-<div id="hypotheses" class="section level2">
-<h2>Hypotheses</h2>
-<p>Null hypothesis: Changes in the string’s length do not affect the
-time period.</p>
-<p>Alternate hypothesis: Changes in the string’s length do affect the
-time period.</p>
+<div id="subjects" class="section level2">
+<h2>Subjects</h2>
+<p>The subjects are the pendulums constructed by tying two 1 CNY coins
+to a length of string. The same type and number of coins were used
+throughout the experiment. A piece of string was suspended from a fixed
+support, and the coins were attached to the end of the string to act as
+the pendulum bob. The pendulum was released from a fixed angle, and the
+time it took to complete one period was recorded using a stopwatch.</p>
+<p>2 coins were chosen as they are readily available, of a fixed mass,
+and provide enough mass for the pendulum to swing. The subjects are
+ideal for the study since the pendulum system is a physical object
+rather than a social or biological population. They directly represent
+the physical system being investigated and allow for controlled
+manipulation of the treatment variable while ensuring other factors are
+constant. There might be limitations in generalizing the results to all
+pendulums. The findings will directly apply to pendulums made with
+similar materials and in similar settings, but may not be generalizable
+to pendulums with different bobs, materials, or conditions. That said,
+while the exact timings and results from this experiment is not
+applicable to all pendulums, the trend and relationship between pendulum
+length and period are generalizable.</p>
 </div>
 <div id="analysis" class="section level2">
 <h2>Analysis</h2>
@@ -507,38 +548,80 @@ to confirm whether it is truly a linear regression:</p>
 accurate, but they seem to be acceptable for this sample size. It is
 however somewhat unclear what causes the enlarged residues for large
 theoretical quantities.</p>
-<p>Given that a linear regression is mostly appropriate as suggested by
-the diagnostic tests, its <span class="math inline">\(p\)</span>-value
-<span class="math inline">\(4.52 \times 10^{-12}\)</span> suggests that
-it is extremely unlikely to obtain our result (or more extreme results)
-given that the null hypothesis is true, therefore suggesting with high
-confidence that the null hypothesis is false and that the alternate
-hypothesis is true. Therefore: changes in the string’s length do affect
-the time period.</p>
+<p>Given that a linear regression is an appropriate estimate as
+suggested by the diagnostic tests (even though the relationship is
+theoretically supposed to be that of a square root), its <span class="math inline">\(p\)</span>-value <span class="math inline">\(4.52
+\times 10^{-12}\)</span> suggests that it is extremely unlikely to
+obtain our result (or more extreme results) given that the null
+hypothesis is true, therefore suggesting with high confidence that the
+null hypothesis is false and that the alternate hypothesis is true.
+Therefore: changes in the string’s length do affect the time period.</p>
 </div>
 </div>
 <div id="t-tests" class="section level2">
 <h2>T-tests</h2>
-<!--
-
-``` r
-pairwise.t.test(data$time_10_periods, data$length_cm, p.adjust.method = "bonferroni")
-```
-
-```
+<p>Another way to confirm the statistical significance of the difference
+in means is via Welch’s <span class="math inline">\(t\)</span>-test, not
+assuming equal variances.</p>
+<pre class="r"><code>group_10 &lt;- data$time_10_periods[data$length_cm == 10]
+group_15 &lt;- data$time_10_periods[data$length_cm == 15]
+group_20 &lt;- data$time_10_periods[data$length_cm == 20]
+group_25 &lt;- data$time_10_periods[data$length_cm == 25]</code></pre>
+<pre class="r"><code>print(t.test(group_10, group_15, var.equal = FALSE))</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
 ## 
-##  Pairwise comparisons using t tests with pooled SD 
+## data:  group_10 and group_15
+## t = -5.8734, df = 5.9277, p-value = 0.001126
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -1.1590869 -0.4759131
+## sample estimates:
+## mean of x mean of y 
+##    8.5525    9.3700</code></pre>
+<pre class="r"><code>print(t.test(group_15, group_20, var.equal = FALSE))</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
 ## 
-## data:  data$time_10_periods and data$length_cm 
+## data:  group_15 and group_20
+## t = -7.1765, df = 5.9957, p-value = 0.000371
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -1.2806739 -0.6293261
+## sample estimates:
+## mean of x mean of y 
+##     9.370    10.325</code></pre>
+<pre class="r"><code>print(t.test(group_20, group_25, var.equal = FALSE))</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
 ## 
-##    10      15      20     
-## 15 0.00011 -       -      
-## 20 2.9e-08 2.4e-05 -      
-## 25 7.8e-10 9.0e-08 0.00099
-## 
-## P value adjustment method: bonferroni
-```
--->
+## data:  group_20 and group_25
+## t = -6.6207, df = 3.3113, p-value = 0.005125
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -0.9428253 -0.3521747
+## sample estimates:
+## mean of x mean of y 
+##   10.3250   10.9725</code></pre>
+<p>Again, the <span class="math inline">\(p\)</span>-values are
+extremely small, suggesting that it is extremely unlikely to obtain our
+result (or more extreme results) given that the null hypothesis is true,
+therefore suggesting with high confidence that the null hypothesis is
+false and that the alternate hypothesis is true. Therefore: changes in
+the string’s length do affect the time period.</p>
+</div>
+<div id="estimated-effects" class="section level2">
+<h2>Estimated effects</h2>
+<p>Are effects estimated correctly? Are they described correctly? Is
+their substantive significance discussed, ideally with a relevant
+benchmark?</p>
+</div>
+<div id="statistical-significance" class="section level2">
+<h2>Statistical Significance</h2>
+<p>Are p-values presented and discussed correctly? A full score would
+discuss why the p-value is obtained, i.e. what about the study led to
+the p-values estimated.</p>
+<p><em>I think this is done</em></p>
 </div>
 <div id="informal-bibliography" class="section level2">
 <h2>Informal bibliography</h2>
