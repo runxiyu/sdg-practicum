@@ -1,7 +1,6 @@
 ---
 title: "How does a pendulum's length affect its time period?"
 author: "Heather Wang, Qihan Liu, Runxi Yu, Vincent Bae"
-# date: "`r Sys.Date()`"
 output: html_document
 ---
 
@@ -14,6 +13,41 @@ A pendulum
 ## Experiment design
 
 ## Analysis
+ 
+```{r}
+data <- read.csv("data.csv")
+data
+summary(data)
+```
+
+In order to gain a general sense of the data we have obtained, let us plot the
+data. Since each independent variable has multiple trials and therefore has
+multiple dependent data points, we use boxplots:
+
+```{r}
+boxplot(time_10_periods ~ length_cm, data = data,
+	main = "Effect of Length on Time",
+	xlab = "Length (cm)",
+	ylab = "Time (10 periods)")
+```
+
+The data is roughly linear. So,
+
+```{r}
+model <- lm(time_10_periods ~ length_cm, data = data)
+summary(model)
+```
+
+We shall run various diagnostic plots of this linear regression model to
+confirm whether it is truly a linear regression:
+
+```{r}
+plot(model)
+```
+
+```{r}
+pairwise.t.test(data$time_10_periods, data$length_cm, p.adjust.method = "bonferroni")
+```
 
 ## Results
 
