@@ -1,15 +1,25 @@
 ---
-title: "Test"
-author: "uhhhh"
-date: "`r Sys.Date()`"
+title: "How does a pendulum's length affect its time period?"
+author: "Heather Wang, Qihan Liu, Runxi Yu, Vincent Bae"
+# date: "`r Sys.Date()`"
 output: html_document
 ---
 
 ## Introduction
 
+![Simple gravity pendulum](Simple_gravity_pendulum.svg)
 
-## Experiment Design
+A pendulum
+
+## Experiment design
 
 ## Analysis
 
 ## Results
+
+## Informal bibliography
+
+I'm not really sure how to get BibLaTeX working with R Markdown yet, so here's
+just an itemized list of references without any particular bibliography format.
+
+* Simple Gravity pendulum, by Chetvorno, public domain, https://commons.wikimedia.org/w/index.php?curid=5276335

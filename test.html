@@ -9,11 +9,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="uhhhh" />
+<meta name="author" content="Heather Wang, Qihan Liu, Runxi Yu, Vincent Bae" />
 
-<meta name="date" content="2025-07-28" />
 
-<title>Test</title>
+<title>How does a pendulum’s length affect its time period?</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -350,24 +349,90 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">Test</h1>
-<h4 class="author">uhhhh</h4>
-<h4 class="date">2025-07-28</h4>
+<h1 class="title toc-ignore">How does a pendulum’s length affect its
+time period?</h1>
+<h4 class="author">Heather Wang, Qihan Liu, Runxi Yu, Vincent Bae</h4>
 
 </div>
 
 
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
+<div class="float">
+<svg id="svg2" alt="Simple gravity pendulum" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://web.resource.org/cc/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="744.09448" height="700" sodipodi:version="0.32" inkscape:version="0.45" sodipodi:docname="Simple_gravity_pendulum2.svg" inkscape:output_extension="org.inkscape.output.svg.inkscape" sodipodi:docbase="C:\Documents and Settings\Administator\Desktop" sodipodi:modified="true">
+  <defs id="svg2_defs4">
+    <marker inkscape:stockid="Arrow1Mstart" orient="auto" refY="0.0" refX="0.0" id="svg2_Arrow1Mstart" style="overflow:visible">
+      <path id="svg2_path7229" d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z " style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;marker-start:none" transform="scale(0.4) translate(10,0)" />
+    </marker>
+    <marker inkscape:stockid="Arrow2Lstart" orient="auto" refY="0.0" refX="0.0" id="svg2_Arrow2Lstart" style="overflow:visible">
+      <path id="svg2_path7217" style="font-size:12.0;fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round" d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z " transform="scale(1.1) translate(1,0)" />
+    </marker>
+    <marker inkscape:stockid="Arrow2Lend" orient="auto" refY="0.0" refX="0.0" id="svg2_Arrow2Lend" style="overflow:visible;">
+      <path id="svg2_path7214" style="font-size:12.0;fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;" d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z " transform="scale(1.1) rotate(180) translate(1,0)" />
+    </marker>
+    <marker inkscape:stockid="Arrow2Mend" orient="auto" refY="0" refX="0" id="svg2_Arrow2Mend" style="overflow:visible">
+      <path id="svg2_path5256" style="font-size:12px;fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round" d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.97309,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z " transform="scale(-0.6,-0.6)" />
+    </marker>
+    <marker inkscape:stockid="Arrow2Mstart" orient="auto" refY="0" refX="0" id="svg2_Arrow2Mstart" style="overflow:visible">
+      <path id="svg2_path5259" style="font-size:12px;fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round" d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.97309,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z " transform="scale(0.6,0.6)" />
+    </marker>
+    <linearGradient id="svg2_linearGradient3141">
+      <stop style="stop-color:#ffffff;stop-opacity:1;" offset="0" id="svg2_stop3143"></stop>
+      <stop id="svg2_stop3149" offset="1" style="stop-color:#5f5f5f;stop-opacity:1;"></stop>
+    </linearGradient>
+    <radialGradient inkscape:collect="always" xlink:href="#svg2_linearGradient3141" id="svg2_radialGradient3147" cx="477.14285" cy="622.36218" fx="477.14285" fy="622.36218" r="29.021427" gradientUnits="userSpaceOnUse"></radialGradient>
+  </defs>
+  <sodipodi:namedview id="svg2_base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" gridtolerance="10000" guidetolerance="10" objecttolerance="10" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="0.7" inkscape:cx="386.90889" inkscape:cy="415.79361" inkscape:document-units="px" inkscape:current-layer="layer1" showguides="true" inkscape:guide-bbox="true" height="700px" width="744.09448px" inkscape:window-width="1280" inkscape:window-height="900" inkscape:window-x="-4" inkscape:window-y="-4" inkscape:grid-points="false" inkscape:guide-points="true"></sodipodi:namedview>
+  <metadata id="svg2_metadata7">
+    <rdf:RDF>
+      <cc:Work rdf:about>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g inkscape:groupmode="layer" id="svg2_layer2" inkscape:label="Trajectory">
+    <path sodipodi:type="arc" style="opacity:1;color:#000000;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#ff0000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:15, 15;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="svg2_path4121" sodipodi:cx="370.71429" sodipodi:cy="153.79076" sodipodi:rx="478.57144" sodipodi:ry="478.57144" d="M 565.81403,590.78814 A 478.57144,478.57144 0 0 1 171.94002,589.12903" sodipodi:start="1.1508942" sodipodi:end="1.999123" sodipodi:open="true" transform="translate(-18.571429,-61.428571)" />
+    <text xml:space="preserve" style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial" x="375.71426" y="103.79074" id="svg2_text5292" sodipodi:linespacing="100%"><tspan sodipodi:role="line" id="svg2_tspan5294" x="375.71426" y="103.79074">frictionless pivot</tspan></text>
+    <text xml:space="preserve" style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial" x="433.57141" y="307.36224" id="svg2_text5296" sodipodi:linespacing="100%"><tspan sodipodi:role="line" x="433.57141" y="307.36224" id="svg2_tspan6273">massless rod</tspan></text>
+    <text sodipodi:linespacing="100%" id="svg2_text6269" y="600.2193" x="489.28571" style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial" xml:space="preserve"><tspan y="600.2193" x="489.28571" id="svg2_tspan6271" sodipodi:role="line">massive bob</tspan></text>
+    <path style="fill:#ff0000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 549.23768,538.11655 L 580.36899,513.60806 L 541.66593,521.15606 C 547.26607,524.61084 550.78976,530.84971 549.23768,538.11655 z " id="svg2_path6277" sodipodi:nodetypes="cccc" />
+    <path sodipodi:nodetypes="cccc" id="svg2_path9186" d="M 160.56827,520.58782 L 121.72396,512.78115 L 152.56677,537.34984 C 151.56537,530.84643 154.02989,524.11841 160.56827,520.58782 z " style="fill:#ff0000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <text xml:space="preserve" style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial" x="38.57143" y="556.64795" id="svg2_text9190" sodipodi:linespacing="100%"><tspan sodipodi:role="line" id="svg2_tspan9192" x="38.57143" y="556.64795">bob&#39;s</tspan><tspan sodipodi:role="line" x="38.57143" y="596.64795" id="svg2_tspan9194">trajectory</tspan></text>
+    <text xml:space="preserve" style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial" x="260" y="635" id="svg2_text4129" sodipodi:linespacing="100%"><tspan sodipodi:role="line" id="svg2_tspan4131" x="260" y="635">equilibrium</tspan><tspan sodipodi:role="line" x="260" y="675" id="svg2_tspan4133">position</tspan></text>
+  </g>
+  <g inkscape:label="Pendulum" inkscape:groupmode="layer" id="svg2_layer1">
+    <path sodipodi:type="arc" style="opacity:1;color:#000000;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.89999998;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="svg2_path2164" sodipodi:cx="371.42856" sodipodi:cy="155.21933" sodipodi:rx="12.857142" sodipodi:ry="12.857142" d="M 384.2857 155.21933 A 12.857142 12.857142 0 1 1  358.57142,155.21933 A 12.857142 12.857142 0 1 1  384.2857 155.21933 z" transform="matrix(0.8472222,0,0,0.8472222,39.424603,-37.178792)" />
+    <path style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="M 353.23748,93.813944 L 496.99712,517.89482" id="svg2_path2166" sodipodi:nodetypes="cc" />
+    <path sodipodi:type="arc" style="opacity:1;color:#000000;fill:url(#svg2_radialGradient3147);fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.89999998;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="svg2_path2168" sodipodi:cx="477.14285" sodipodi:cy="622.36218" sodipodi:rx="28.571428" sodipodi:ry="28.571428" d="M 505.71428 622.36218 A 28.571428 28.571428 0 1 1  448.57142,622.36218 A 28.571428 28.571428 0 1 1  505.71428 622.36218 z" transform="translate(30.714285,-77.857142)" />
+    <path transform="translate(-124.28571,-50)" d="M 505.71428 622.36218 A 28.571428 28.571428 0 1 1  448.57142,622.36218 A 28.571428 28.571428 0 1 1  505.71428 622.36218 z" sodipodi:ry="28.571428" sodipodi:rx="28.571428" sodipodi:cy="622.36218" sodipodi:cx="477.14285" id="svg2_path2183" style="opacity:1;color:#000000;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:2.3;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:9.2,9.2;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" sodipodi:type="arc" />
+    <path style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:8,8;stroke-dashoffset:0" d="M 352.85714,94.285714 L 352.85714,543.57143" id="svg2_path3158" />
+    <path sodipodi:type="arc" style="opacity:1;color:#000000;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#0000ff;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:url(#svg2_Arrow1Mstart);marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible;enable-background:accumulate" id="svg2_path5104" sodipodi:cx="354.28571" sodipodi:cy="93.571426" sodipodi:rx="117.14286" sodipodi:ry="117.14286" d="M 387.80341,205.81675 A 117.14286,117.14286 0 0 1 353.47785,210.7115" sodipodi:start="1.2806142" sodipodi:end="1.5776927" sodipodi:open="true" />
+    <text xml:space="preserve" style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial" x="169.28572" y="244.28572" id="svg2_text7246" sodipodi:linespacing="100%"><tspan sodipodi:role="line" id="svg2_tspan7248" x="169.28572" y="244.28572">amplitude</tspan></text>
+    <text xml:space="preserve" style="font-size:40px;font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:100%;writing-mode:lr-tb;text-anchor:start;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Arial" x="361.42859" y="248.57144" id="svg2_text8237" sodipodi:linespacing="100%"><tspan sodipodi:role="line" id="svg2_tspan8239" x="361.42859" y="248.57144">θ</tspan></text>
+  </g>
+</svg>
+<div class="figcaption">Simple gravity pendulum</div>
+</div>
+<p>A pendulum</p>
 </div>
 <div id="experiment-design" class="section level2">
-<h2>Experiment Design</h2>
+<h2>Experiment design</h2>
 </div>
 <div id="analysis" class="section level2">
 <h2>Analysis</h2>
 </div>
 <div id="results" class="section level2">
 <h2>Results</h2>
+</div>
+<div id="informal-bibliography" class="section level2">
+<h2>Informal bibliography</h2>
+<p>I’m not really sure how to get BibLaTeX working with R Markdown yet,
+so here’s just an itemized list of references without any particular
+bibliography format.</p>
+<ul>
+<li>Simple Gravity pendulum, by Chetvorno, public domain, <a href="https://commons.wikimedia.org/w/index.php?curid=5276335" class="uri">https://commons.wikimedia.org/w/index.php?curid=5276335</a></li>
+</ul>
 </div>
 
 
