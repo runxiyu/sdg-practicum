@@ -1,0 +1,14 @@
+## Simulations
+
+* Simulating whether alternate election systems (as opposed to FPTP) would
+  have the positive effect on voter representation (e.g. by not disadvantaging
+  small parties and reducing the spoiler effect)
+
+*
+
+
+## Experiments in real life
+
+* Paper airplanes (a bit lame)
+
+* Pendulum
